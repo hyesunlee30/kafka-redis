@@ -1,9 +1,9 @@
-package com.coupon.api.service;
+package com.example.api.service;
 
-
-import com.coupon.api.domain.Coupon;
-import com.coupon.api.repository.CouponCountRepository;
-import com.coupon.api.repository.CouponRepository;
+import com.example.api.producer.ApiCouponCreateProducer;
+import com.example.api.repository.ApiCouponCountRepository;
+import com.example.api.repository.ApiCouponRepository;
+import com.example.member.controller.MemberDto;
 import org.springframework.stereotype.Service;
 
 @Service
