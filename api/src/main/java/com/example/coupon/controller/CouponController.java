@@ -20,5 +20,6 @@ public class CouponController
     public void createCoupon(@RequestBody MemberDto memberDto)
     {
         couponService.couponCreateEvent(memberDto);
+        //TODO response
     }
 }

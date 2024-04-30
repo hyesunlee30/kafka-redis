@@ -36,7 +36,7 @@ class ApiCouponServiceTest
         int threadCount = 1000;
         ExecutorService executorService = Executors.newFixedThreadPool(32);
 
-
+        // 모든 Thread들의 수행이 끝날때 까지 대기
         CountDownLatch countDownLatch = new CountDownLatch(threadCount);
 
         for(int i=0; i<threadCount; i++){
@@ -53,12 +53,12 @@ class ApiCouponServiceTest
         }
         countDownLatch.await();
 
-        //Consumer에서는 이벤트를 받았으나, DB에 아직 쿠폰이 모두 생성되지 않았으므로 데이터 간에 시간 텀이 발생한다.
         Thread.sleep(10000);
 
         long count = apiCouponRepository.count();
 
         assertThat(count).isEqualTo(100);
+        //레이스 컨디션 : 두 개 이상의 스레드가 공유 데이터에 접근하고, 동시에 작업을 하려 할 때 발생하는 문제.
 
     }
 

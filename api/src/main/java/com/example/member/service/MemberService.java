@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 public class MemberService
 {
     private final MemberRepository memberRepository;
+//    private final CouponCreateProducer couponCreateProducer;
 
     public MemberService(MemberRepository memberRepository, CouponCountRepository couponCountRepository)
     {
@@ -17,5 +18,7 @@ public class MemberService
 
     public void login(MemberDto memberDto)
     {
+        //TODO LOGIN 구현.
+        // Login 할 member가 없으면, 생성 후 로그인 구현
     }
 }

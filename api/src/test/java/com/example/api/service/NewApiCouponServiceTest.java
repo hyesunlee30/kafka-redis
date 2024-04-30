@@ -14,6 +14,7 @@ class NewApiCouponServiceTest
     @Test
     void apply(){
         //when
+
         MemberDto memberDto = new MemberDto(1L, "member_1");
         applyService.apply(memberDto);
 

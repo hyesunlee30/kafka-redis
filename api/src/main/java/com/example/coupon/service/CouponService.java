@@ -27,6 +27,7 @@ public class CouponService
 
         if(count > 100)
         {
+            //TODO 쿠폰 생성 실패
             return;
         }
         couponCreateProducer.send(memberDto);

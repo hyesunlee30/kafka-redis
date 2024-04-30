@@ -17,8 +17,9 @@ public class ApiCoupon
     private String couponName;
     private LocalDateTime createDate;
 
-    public ApiCoupon()
+    public ApiCoupon(Long memberId)
     {
+        this.memberId = memberId;
     }
 
     public ApiCoupon(Long memberId, String couponName, LocalDateTime createDate)
